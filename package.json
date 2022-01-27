@@ -1,0 +1,22 @@
+{
+  "name": "i_news",
+  "version": "1.0.0",
+  "description": "I News  is India's No. 1 news Site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js -e js hbs"
+  },
+  "keywords": [],
+  "author": "Sumeet Bhardwaj",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "hbs": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.8",
+    "nodemon": "^2.0.15"
+  }
+}
