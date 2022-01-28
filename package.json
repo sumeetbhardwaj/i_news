@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js -e js hbs"
+    "dev": "nodemon app.js -e js, hbs"
   },
   "keywords": [],
   "author": "Sumeet Bhardwaj",
@@ -13,7 +13,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.1",
-    "bootstrap": "^5.1.3",
+    "bootstrap": "^3.3.5",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
     "hbs": "^4.2.0",

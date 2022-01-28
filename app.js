@@ -5,15 +5,13 @@ const hbs = require("hbs");
 require("./config/database");
 
 const router = require('./routes/routers')
-
-
 const app = express();
 const port = process.env.PORT;
 
 app.use("/bootstrap_css",express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
 app.use("/bootstrap_js",express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
 app.use("/jquery",express.static(path.join(__dirname, 'node_modules/jquery/dist')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public',express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
