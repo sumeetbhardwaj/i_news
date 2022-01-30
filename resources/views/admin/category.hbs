@@ -1,61 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>ADMIN Panel</title>
-        <!-- Bootstrap -->
-    <link rel="stylesheet" href="../bootstrap_css/bootstrap.min.css" />
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="../public/assets/css/font-awesome.css">
-    <!-- Custom stlylesheet -->
-    <link rel="stylesheet" href="../public/assets/css/style.css">
-    </head>
-    <body>
-        <!-- HEADER -->
-        <div id="header-admin">
-            <!-- container -->
-            <div class="container">
-                <!-- row -->
-                <div class="row">
-                    <!-- LOGO -->
-                    <div class="col-md-2">
-                        <a href="post.php"><img class="logo" src="../public/images/news.jpg"></a>
-                    </div>
-                    <!-- /LOGO -->
-                      <!-- LOGO-Out -->
-                    <div class="col-md-offset-9  col-md-1">
-                        <a href="logout.php" class="admin-logout" >logout</a>
-                    </div>
-                    <!-- /LOGO-Out -->
-                </div>
-            </div>
-        </div>
-        <!-- /HEADER -->
-        <!-- Menu Bar -->
-        <div id="admin-menubar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                       <ul class="admin-menu">
-                            <li>
-                                <a href="post.php">Post</a>
-                            </li>
-                            <li>
-                                <a href="category.php">Category</a>
-                            </li>
-                            <li>
-                                <a href="users.php">Users</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Menu Bar -->
-
+{{>admin/header}}
+{{!-- {{category}} --}}
 <div id="admin-content">
     <div class="container">
         <div class="row">
@@ -63,60 +7,27 @@
                 <h1 class="admin-heading">All Categories</h1>
             </div>
             <div class="col-md-2">
-                <a class="add-new" href="add-category.php">add category</a>
+                <a class="add-new" href="/admin/add_category">add category</a>
             </div>
             <div class="col-md-12">
                 <table class="content-table">
                     <thead>
-                        <th>S.No.</th>
+                        {{!-- <th>S.No.</th> --}}
                         <th>Category Name</th>
                         <th>No. of Posts</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </thead>
                     <tbody>
+                        {{#each category}}
                         <tr>
-                            <td class='id'>1</td>
-                            <td>Html</td>
+                            {{!-- <td class='id'>{{@index}}</td> --}}
+                            <td>{{this.name}}</td>
                             <td>5</td>
-                            <td class='edit'><a href='update-category.php'><i class='fa fa-edit'></i></a></td>
-                            <td class='delete'><a href='delete-category.php'><i class='fa fa-trash-o'></i></a></td>
+                            <td class='edit'><a href='update_category?id={{this._id}}'><i class='fa fa-edit'></i></a></td>
+                            <td class='delete'><a href='delete_category?id={{this._id}}'><i class='fa fa-trash-o'></i></a></td>
                         </tr>
-                        <tr>
-                            <td class='id'>2</td>
-                            <td>Css</td>
-                            <td>15</td>
-                            <td class='edit'><a href='update-category.php'><i class='fa fa-edit'></i></a></td>
-                            <td class='delete'><a href='delete-category.php'><i class='fa fa-trash-o'></i></a></td>
-                        </tr>
-                        <tr>
-                            <td class='id'>3</td>
-                            <td>Java</td>
-                            <td>8</td>
-                            <td class='edit'><a href='update-category.php'><i class='fa fa-edit'></i></a></td>
-                            <td class='delete'><a href='delete-category.php'><i class='fa fa-trash-o'></i></a></td>
-                        </tr>
-                        <tr>
-                            <td class='id'>4</td>
-                            <td>Php</td>
-                            <td>11</td>
-                            <td class='edit'><a href='update-category.php'><i class='fa fa-edit'></i></a></td>
-                            <td class='delete'><a href='delete-category.php'><i class='fa fa-trash-o'></i></a></td>
-                        </tr>
-                        <tr>
-                            <td class='id'>5</td>
-                            <td>Python</td>
-                            <td>13</td>
-                            <td class='edit'><a href='update-category.php'><i class='fa fa-edit'></i></a></td>
-                            <td class='delete'><a href='delete-category.php'><i class='fa fa-trash-o'></i></a></td>
-                        </tr>
-                        <tr>
-                            <td class='id'>6</td>
-                            <td>Scss</td>
-                            <td>3</td>
-                            <td class='edit'><a href='update-category.php'><i class='fa fa-edit'></i></a></td>
-                            <td class='delete'><a href='delete-category.php'><i class='fa fa-trash-o'></i></a></td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
                 <ul class='pagination admin-pagination'>
@@ -128,18 +39,4 @@
         </div>
     </div>
 </div>
-<!-- Footer -->
-<div id ="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <span>© Copyright 2019 News | Powered by <a href="http://yahoobaba.net/">Yahoo Baba</a></span>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /Footer -->
-<script src="../jquery/jquery.min.js"></script>
-<script src="../bootstrap_js/bootstrap.min.js"></script>
-</body>
-</html>
+{{>admin/footer}}

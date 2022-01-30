@@ -7,13 +7,13 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>News</title>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../bootstrap_css/bootstrap.min.css" />
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="../public/assets/css/font-awesome.css">
     <!-- Custom stlylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../public/assets/css/style.css">
 </head>
-<body>
+<body> 
 <!-- HEADER -->
 <div id="header">
     <!-- container -->
@@ -22,7 +22,7 @@
         <div class="row">
             <!-- LOGO -->
             <div class=" col-md-offset-4 col-md-4">
-                <a href="index.php" id="logo"><img src="images/news.jpg"></a>
+                <a href="/" id="logo"><img src="../public/images/news.jpg"></a>
             </div>
             <!-- /LOGO -->
         </div>

@@ -1,61 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>ADMIN Panel</title>
-        <!-- Bootstrap -->
-    <link rel="stylesheet" href="../bootstrap_css/bootstrap.min.css" />
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="../public/assets/css/font-awesome.css">
-    <!-- Custom stlylesheet -->
-    <link rel="stylesheet" href="../public/assets/css/style.css">
-    </head>
-    <body>
-        <!-- HEADER -->
-        <div id="header-admin">
-            <!-- container -->
-            <div class="container">
-                <!-- row -->
-                <div class="row">
-                    <!-- LOGO -->
-                    <div class="col-md-2">
-                        <a href="post.php"><img class="logo" src="../public/images/news.jpg"></a>
-                    </div>
-                    <!-- /LOGO -->
-                      <!-- LOGO-Out -->
-                    <div class="col-md-offset-9  col-md-1">
-                        <a href="logout.php" class="admin-logout" >logout</a>
-                    </div>
-                    <!-- /LOGO-Out -->
-                </div>
-            </div>
-        </div>
-        <!-- /HEADER -->
-        <!-- Menu Bar -->
-        <div id="admin-menubar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                       <ul class="admin-menu">
-                            <li>
-                                <a href="post.php">Post</a>
-                            </li>
-                            <li>
-                                <a href="category.php">Category</a>
-                            </li>
-                            <li>
-                                <a href="users.php">Users</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Menu Bar -->
-        
+{{>admin/header}}
   <div id="admin-content">
       <div class="container">
           <div class="row">
@@ -65,11 +8,12 @@
               <div class="col-md-offset-3 col-md-6">
                   <form action="" method ="POST">
                       <div class="form-group">
-                          <input type="hidden" name="cat_id"  class="form-control" value="1" placeholder="">
+                          <input type="hidden" name="cat_id"  class="form-control" value="{{singleCat._id}}" placeholder="">
                       </div>
                       <div class="form-group">
                           <label>Category Name</label>
-                          <input type="text" name="cat_name" class="form-control" value="Html"  placeholder="" required>
+                          <span style="color: red;"><br>{{msg}}</span>
+                          <input type="text" name="cat" class="form-control" value="{{singleCat.name}}"  placeholder="">
                       </div>
                       <input type="submit" name="sumbit" class="btn btn-primary" value="Update" required />
                   </form>
@@ -77,18 +21,4 @@
               </div>
             </div>
           </div>
-<!-- Footer -->
-<div id ="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <span>© Copyright 2019 News | Powered by <a href="http://yahoobaba.net/">Yahoo Baba</a></span>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /Footer -->
-<script src="../jquery/jquery.min.js"></script>
-<script src="../bootstrap_js/bootstrap.min.js"></script>
-</body>
-</html>
+{{>admin/footer}}
