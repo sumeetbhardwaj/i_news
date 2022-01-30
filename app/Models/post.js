@@ -20,7 +20,7 @@ const postSchema = new mongoose.Schema({
     images: {
         type : String,
     }
-},{timestams : true})
+},{timestamps : true})
 
 const Post = mongoose.model("Post", postSchema)
 
