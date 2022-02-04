@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const Category = require("../Models/category")
 
 const postSchema = new mongoose.Schema({
     title: {
@@ -10,12 +11,12 @@ const postSchema = new mongoose.Schema({
         required : true
     },
     category: {
-        type : Number,
-        required : true
-    },
+        type : mongoose.Schema.Types.ObjectId,
+        required : true,
+        ref: 'Category'  
+      },
     author: {
-        type : Number,
-        required : true
+        type : String,
     },
     images: {
         type : String,

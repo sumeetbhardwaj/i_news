@@ -3,6 +3,7 @@ const express = require("express");
 const path  = require("path");
 const hbs = require("hbs");
 const bodyParser = require("body-parser")
+const exphbs = require("express-handlebars")
 require("./config/database");
 
 const router = require('./routes/routers');

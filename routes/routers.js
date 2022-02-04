@@ -16,6 +16,8 @@ router.get('/admin', adminController.home)
 router.get('/admin/post', adminController.post)
 
 router.get('/admin/add_post', adminController.add_post)
+router.post('/admin/add_post', adminController.add_post)
+router.get('/admin/delete_post', adminController.delete_post)
 
 //category routers
 router.get('/admin/category', adminController.category)

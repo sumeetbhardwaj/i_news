@@ -6,7 +6,8 @@ const categorySchema = new mongoose.Schema({
         required : true
     },
     postCount: {
-        type : Number
+        type : Number,
+        default: "0"
     }
 },{timestamps : true})
 
